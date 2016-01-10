@@ -6,6 +6,6 @@ module.exports = function (db,models) {
     models.eassy=db.define("eassy", {
         id:      {type: 'serial', key: true}, // the auto-incrementing primary key
         name:    {type: 'text'},
-        age:     {type: 'number'}
+        content: {type: 'text'}
     });
 };
