@@ -11,7 +11,7 @@ module.exports=function(models){
                     {
                         items[index].remove();
                     }
-                    if(cb)cb();
+                    if(cb)cb(err);
                 }
                 else {
                     cb({message: 'no item found'});

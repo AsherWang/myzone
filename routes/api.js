@@ -19,7 +19,7 @@ router.get('/test', function (req, res) {
 files = fs.readdirSync('./routes/api');
 for (index in files) {
     name = '/' + files[index].slice(0, -3);
-    router.use(name, require(__dirname + '/api' + name));
+    router.use(name, require(__dirname + '/api' + name)(express.Router(),require('../controllers/api'+name)));
 }
 
 module.exports = router;

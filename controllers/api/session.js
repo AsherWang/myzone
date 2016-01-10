@@ -1,9 +1,9 @@
 var config = require('../../config/api');
 var jwt = require('jsonwebtoken');
 var session = module.exports;
-//Éú³Étoken
+//åˆ›å»ºtoken
 function createToken(user) {
-    return jwt.sign(user.omit('password'), config.secret, {expiresIn: config.token_expire_time});
+    return jwt.sign(user.omit('password'), config.secret, {expiresIn: 60 * config.token_expire_time});
 }
 
 session.create = function (req, res) {

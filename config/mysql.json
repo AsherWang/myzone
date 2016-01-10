@@ -1,0 +1,7 @@
+{
+  "host": "localhost",
+  "user" : "asher",
+  "password" : "asher",
+  "database" : "myzone",
+  "orm_connect_string":"mysql://asher:asher@localhost/myzone"
+}

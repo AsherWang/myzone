@@ -8,7 +8,7 @@ module.exports = function (db, models) {
     }, {
         methods: {
             omit: function (param) {
-                return _.omit(this,param);
+                return _.omit(this, param);
             }
         }
     });

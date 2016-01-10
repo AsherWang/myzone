@@ -1,4 +1,4 @@
 {
   "secret": "asher",
-  "token_expire_time":5
+  "token_expire_time":120
 }

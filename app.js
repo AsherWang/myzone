@@ -1,6 +1,7 @@
 var express = require('express');  //expree框架
 var orm = require('orm');  //嗯orm
 var logger = require('morgan');  //记录日志
+var db_config=require('./config/mysql'); //数据库配置
 var bodyParser = require('body-parser');  //解析request参数
 //var multer = require('multer');  //如果需要用到文件上传等功能
 var app = express();
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: false}));// for parsing application/x-w
 
 
 //使用orm+mysql
-app.use(orm.express("mysql://asher:asher@localhost/myzone", {
+app.use(orm.express(db_config.orm_connect_string, {
     define: function (db, models) {
         var files = require('fs').readdirSync('./models/models');
         for (var index in files) {
