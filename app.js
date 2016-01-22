@@ -14,12 +14,10 @@ app.use(bodyParser.urlencoded({extended: false}));// for parsing application/x-w
 //使用orm+mysql
 app.use(orm.express(db_config.orm_connect_string, {
     define: function (db, models) {
-        var files = require('fs').readdirSync('./models/models');
+        var files = require('fs').readdirSync('./models');
         for (var index in files) {
-            require("./models/models/" + files[index])(db, models);
+            require("./models/" + files[index])(db, models);
         }
-        //为所有models添加自定义的公共方法
-        require('./models/common')(models);
     }
 }));
 

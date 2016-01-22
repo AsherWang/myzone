@@ -6,7 +6,12 @@ var fs = require('fs');
 
 //api接口需要auth验证
 //header中需要写Authorization: Bearer空格+token
-router.use(express_jwt({secret: config.secret}).unless({path: ['/api/session/create']}));
+
+//这样也不好。。。
+var public_path=[
+    '/api/session/create'
+];
+router.use(express_jwt({secret: config.secret}).unless({path:public_path}));
 
 
 //测试用
